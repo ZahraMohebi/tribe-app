@@ -4,7 +4,7 @@ import Button from "../../atom/button";
 import Profile from "../../atom/profile";
 
 type PostCardPropsTypes = {
-  /**Post
+  /**
    * List of posts
    */
   post?: Post;

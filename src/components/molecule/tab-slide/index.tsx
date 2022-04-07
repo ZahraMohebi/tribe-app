@@ -1,5 +1,4 @@
 import { PaginatedSpace } from "@tribeplatform/gql-client/types";
-import { useSpaces } from "@tribeplatform/react-sdk/hooks";
 import { FC, useState } from "react";
 
 export type tabsPropsType = {
@@ -11,7 +10,6 @@ export type tabsPropsType = {
 
 const Tabs: FC<tabsPropsType> = (props: tabsPropsType) => {
   const {spaces} = props;
-  // const { data: spaces, isLoading } = useSpaces({ fields: { image: "basic" } });
   const [activeTab, setActiveTab] = useState("all");
 
   return (
