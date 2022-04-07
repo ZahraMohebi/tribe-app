@@ -4,7 +4,7 @@ export type ProfilePropsTypes = {
   /**
    * User image address
    */
-  image?: any;
+  image?: string;
 
   /**
    * Width of icon

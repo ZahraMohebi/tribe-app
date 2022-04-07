@@ -15,14 +15,14 @@ const FollowerCard = () => {
         role={"Member"}
         name={"John"}
         image={
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-XfFZZMOj6q6zb-Cux7YDKqterBymd2UcMQ&usqp=CAU"
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM1cDnT1Q5ZrkfLfxiSgFvC2ZsjpngynJGvg&usqp=CAU"
         }
       />
       <FollowerDetail
         role={"Manager"}
         name={"David"}
         image={
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm6ZXKrfIKmuWdTSwywETILUwyMFPpb654JQ&usqp=CAU"
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM1cDnT1Q5ZrkfLfxiSgFvC2ZsjpngynJGvg&usqp=CAU"
         }
       />
     </div>
