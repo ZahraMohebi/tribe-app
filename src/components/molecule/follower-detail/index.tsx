@@ -1,21 +1,7 @@
 import { FC } from "react";
 import Button from "../../atom/button";
 import Profile from "../../atom/profile";
-
-type followerDetailPropsTypes = {
-  /**
-   * User image address
-   */
-  image?: any;
-  /**
-   * User Name
-   */
-  name?: any;
-  /**
-   * User Role
-   */
-  role?: any;
-};
+import { followerDetailPropsTypes } from "./types";
 
 const FollowerDetail: FC<followerDetailPropsTypes> = (
   props: followerDetailPropsTypes

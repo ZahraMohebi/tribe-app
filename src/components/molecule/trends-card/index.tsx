@@ -38,7 +38,7 @@ const TrendsCard = () => {
           </div>
       </div>
 
-      <a className="text-dark-blue font-bold mt-4">Show More</a>
+      <a className="text-dark-blue font-bold mt-4" href='#'>Show More</a>
       
     </div>
   );

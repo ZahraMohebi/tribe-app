@@ -1,19 +1,12 @@
-import { Post } from "@tribeplatform/gql-client/types";
 import { FC } from "react";
 import Button from "../../atom/button";
 import Profile from "../../atom/profile";
+import { PostCardPropsTypes } from "./types";
 
-type PostCardPropsTypes = {
-  /**
-   * List of posts
-   */
-  post?: Post;
-};
 
 const PostCard: FC<PostCardPropsTypes> = (props: PostCardPropsTypes) => {
   const { post } = props;
-  
-
+  // console.log(post?.owner?.member?.profilePicture?.url)
 
   return (
     <div className="flex-1 px-4 py-5 sm:p-6 overflow-hidden shadow-lg rounded-2xl bg-primary mb-3">
@@ -21,8 +14,9 @@ const PostCard: FC<PostCardPropsTypes> = (props: PostCardPropsTypes) => {
         <div className="flex flex-row  gap-5 items-center">
           <Profile
             image={
-              "https://tribe-s3-production.imgix.net/W3MaFQVPD8tEBmK2n41g9?w=1000&auto=compress"
+              "https://tribe-s3-production.imgix.net/W3MaFQVPD8tEBmK2n41g9?w=1000&auto=compress,format&dl"
             }
+            
             width="w-14"
             height="h-14"
           />
@@ -64,15 +58,16 @@ const PostCard: FC<PostCardPropsTypes> = (props: PostCardPropsTypes) => {
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Eo_circle_pink_heart.svg"
               className="w-8 h-8"
+              alt='like'
             />
             <span className="text-sm text-gray">{post?.reactionsCount}</span>
           </div>
           <p className="text-base text-gray">{post?.repliesCount} comments</p>
         </div>
         <div className="grid grid-cols-3 gap-4 mt-8 ">
-          <Button>like</Button>
-          <Button>Comment</Button>
-          <Button>Share</Button>
+          <Button className="hover:bg-slate-700">like</Button>
+          <Button className="hover:bg-slate-700">Comment</Button>
+          <Button className="hover:bg-slate-700">Share</Button>
         </div>
       </div>
     </div>

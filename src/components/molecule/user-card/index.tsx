@@ -1,13 +1,7 @@
-import { Member } from "@tribeplatform/gql-client/types";
 import { FC } from "react";
 import Profile from "../../atom/profile";
+import { UserInfoCardType } from "./types";
 
-type UserInfoCardType = {
-  /**
-   * User data which fetched from a hook
-   */
-  user?: Member;
-};
 
 const UserInfoCard: FC<UserInfoCardType> = (props: UserInfoCardType) => {
   const { user } = props;
@@ -29,7 +23,7 @@ const UserInfoCard: FC<UserInfoCardType> = (props: UserInfoCardType) => {
           {user?.name}
         </div>
         {user?.fields?.map((item, index) => {
-          return item.key == "bio" ? (
+          return item.key === "bio" ? (
             <p
               className="text-gray text-base"
               key={index}
