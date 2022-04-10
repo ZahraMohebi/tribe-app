@@ -1,3 +1,4 @@
+import { Image } from "@tribeplatform/gql-client/types";
 import { FC } from "react";
 import Profile from "../../atom/profile";
 import { UserInfoCardType } from "./types";
@@ -10,9 +11,7 @@ const UserInfoCard: FC<UserInfoCardType> = (props: UserInfoCardType) => {
     <div className="overflow-hidden shadow-lg rounded-2xl bg-primary">
       <div className="h-16 w-full lg:h-48 bg-blue flex justify-center">
         <Profile
-          image={
-            "https://tribe-s3-production.imgix.net/W3MaFQVPD8tEBmK2n41g9?w=1000&auto=compress"
-          }
+          image={(user?.profilePicture as Image)?.url}
           width="w-28"
           height="h-28"
           className=" absolute top-40"

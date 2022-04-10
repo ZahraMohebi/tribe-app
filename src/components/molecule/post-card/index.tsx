@@ -1,3 +1,4 @@
+import { Image } from "@tribeplatform/gql-client/types";
 import { FC } from "react";
 import Button from "../../atom/button";
 import Profile from "../../atom/profile";
@@ -6,17 +7,13 @@ import { PostCardPropsTypes } from "./types";
 
 const PostCard: FC<PostCardPropsTypes> = (props: PostCardPropsTypes) => {
   const { post } = props;
-  // console.log(post?.owner?.member?.profilePicture?.url)
 
   return (
     <div className="flex-1 px-4 py-5 sm:p-6 overflow-hidden shadow-lg rounded-2xl bg-primary mb-3">
       <div className="flex flex-row justify-between  items-center mb-4">
         <div className="flex flex-row  gap-5 items-center">
           <Profile
-            image={
-              "https://tribe-s3-production.imgix.net/W3MaFQVPD8tEBmK2n41g9?w=1000&auto=compress,format&dl"
-            }
-            
+            image={(post?.owner?.member?.profilePicture as Image)?.url}
             width="w-14"
             height="h-14"
           />

@@ -29,43 +29,42 @@ const HomePage = () => {
 
   return (
     <>
-  
-      {isLoading && status  && <Loading/>}
-      <div className="container  py-8 max-w-8xl  mx-auto sm:px-6 lg:px-8 w-full grid grid-cols-12 gap-5 overflow-hidden ">
-        <div className="hidden lg:block lg:col-span-3 xl:col-span-3 pt-5 space-y-3">
-          <UserInfoCard user={user} />
-          <FollowerCard />
-        </div>
-        <main className="col-span-12 lg:col-span-9 xl:col-span-9 pt-5">
-          <div className="grid grid-cols-12 gap-5">
-            <div className="col-span-12 lg:col-span-8 space-y-3">
-              <InfiniteScroll
-                pageStart={0}
-                loadMore={() => fetchNextPage()}
-                hasMore={true || false}
-                loader={
-                  hasNextPage && (
-                    <p className="text-gray" key={0}>
-                      {isFetchingNextPage ? `Loading more...` : `Load more`}
-                    </p>
-                  )
-                }
-              >
-                {latestPosts?.map((post, index) => {
-                  return (
-                    <PostCard post={post} key={index} />
-                  );
-                })}
-              </InfiniteScroll>
-            </div>
-
-            <div className="hidden lg:block lg:col-span-4">
-              <TrendsCard />
-            </div>
+      {isLoading && status ? (
+        <Loading />
+      ) : (
+        <div className="container  py-8 max-w-8xl  mx-auto sm:px-6 lg:px-8 w-full grid grid-cols-12 gap-5 overflow-hidden ">
+          <div className="hidden lg:block lg:col-span-3 xl:col-span-3 pt-5 space-y-3">
+            <UserInfoCard user={user} />
+            <FollowerCard />
           </div>
-        </main>
-      </div>
-   
+          <main className="col-span-12 lg:col-span-9 xl:col-span-9 pt-5">
+            <div className="grid grid-cols-12 gap-5">
+              <div className="col-span-12 lg:col-span-8 space-y-3">
+                <InfiniteScroll
+                  pageStart={0}
+                  loadMore={() => fetchNextPage()}
+                  hasMore={true || false}
+                  loader={
+                    hasNextPage && (
+                      <p className="text-gray" key={0}>
+                        {isFetchingNextPage ? `Loading more...` : `Load more`}
+                      </p>
+                    )
+                  }
+                >
+                  {latestPosts?.map((post, index) => {
+                    return <PostCard post={post} key={index} />;
+                  })}
+                </InfiniteScroll>
+              </div>
+
+              <div className="hidden lg:block lg:col-span-4">
+                <TrendsCard />
+              </div>
+            </div>
+          </main>
+        </div>
+      )}
     </>
   );
 };
